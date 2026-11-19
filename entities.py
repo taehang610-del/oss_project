@@ -61,19 +61,21 @@ class Player(pygame.sprite.Sprite):
 
     def update(self, keys):
         """매 프레임 한 번 불린다. keys 는 pygame.key.get_pressed() 의 결과."""
+        # TODO(F1): 왼쪽 방향키(keys[pygame.K_LEFT])를 누르고 있으면 PLAYER_SPEED 만큼 왼쪽으로,
+        #           오른쪽 방향키(keys[pygame.K_RIGHT])면 오른쪽으로 움직이게 할 것.
+        #           플레이어가 화면 왼쪽·오른쪽 끝 밖으로 나가지 않도록 위치를 제한.
         if keys[pygame.K_LEFT]:
             self.rect.x -= PLAYER_SPEED
         if keys[pygame.K_RIGHT]:
             self.rect.x += PLAYER_SPEED
 
         self.rect.x = max(0, min(self.rect.x, WIDTH - self.rect.width))
-        pass
 
     def shoot(self):
         """플레이어 위쪽 가운데에서 출발하는 총알 하나를 만들어 돌려준다."""
         # TODO(F2): Bullet(x, y) 를 작성할 것.
         #           x 는 플레이어의 가로 가운데, y 는 플레이어의 위쪽 끝이므로 참고.
-        return None
+        return Bullet(self.rect.centerx, self.rect.top)
 
 
 class Bullet(pygame.sprite.Sprite):
@@ -87,8 +89,9 @@ class Bullet(pygame.sprite.Sprite):
     def update(self):
         # TODO(F2): 매 프레임 BULLET_SPEED 만큼 위로 움직이게 할 것.
         #           총알이 화면 위로 완전히 나가면 self.kill() 로 없앨 것.
-        pass
-
+        self.rect.y -= BULLET_SPEED
+        if self.rect.bottom <= 0:
+            self.kill()
 
 class Enemy(pygame.sprite.Sprite):
     """화면 위에서 나타나 아래로 내려오는 적. 세 종류 중 하나가 무작위로 나온다."""
