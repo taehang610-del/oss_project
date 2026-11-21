@@ -13,4 +13,5 @@ AI 를 전혀 쓰지 않았다면 표를 지우고 "이 과제에서 생성형 A
 
 2026-11-20 | ChatGPT | F1 | 방향키를 누르고 있는 동안에 움직이는 방식을 구현하기 위한 Pygame Library의 사용법을 물어봄. | pygame의 라이브러리 기능을 받아 구현하는데에 도움을 받았음. |
 2026-11-20 | ChatGPT | F2 | pygame의 라이브러리 기능을 받아 구현하는데에 도움을 받았음. | main.py에서의 F2기능에 pygame.K_SPACE의 값을 설정할 수 있었음. |
-2026-11-22 | ChatGPT | F3 , F4 | pygame의 메서드에 대한 파라미터의 값을 물어보았음. | F3 , F4의 pygame.sprite.spritecollide 메서드의 파라미터의 값을 대입할 수 있었음.|
+2026-11-22 | ChatGPT | F3 , F4 | pygame의 메서드에 대한 파라미터의 값을 물어보았음. | F3 , F4의 pygame.sprite.spritecollide 메서드의 파라미터의 값을 대입할 수 있었음. |
+2026-11-22 | ChatGPT | F5 | 예외처리 문법에 대해 물어보았음. | except의 문법을 알고 예외처리를 할 수 있었음. |
